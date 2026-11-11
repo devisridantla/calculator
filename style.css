@@ -1,0 +1,135 @@
+/* ========================================================
+   CSS STYLESHEET: MODERN MINIMALIST CALCULATOR (DARK MODE)
+   ======================================================== */
+
+:root {
+  --bg-app: #0a0b0e;            /* Deep dark background */
+  --bg-calculator: #16181d;     /* Elevated dark card */
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  /* iOS Dark Theme Button Palette */
+  --btn-num-bg: #22252c;
+  --btn-num-hover: #2e323b;
+  --btn-num-active: #3a3f4a;
+
+  --btn-func-bg: #353945;
+  --btn-func-hover: #434857;
+
+  --btn-op-bg: #ff9f0a;         /* Apple orange */
+  --btn-op-hover: #ffad33;
+  --btn-op-active: #cc7f08;
+
+  --text-main: #f8fafc;
+  --text-muted: #8b92a2;
+
+  --calc-radius: 28px;
+  --btn-radius: 18px;
+  --gap: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 50% 20%, #1f232d 0%, var(--bg-app) 80%);
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text-main);
+  padding: 16px;
+}
+
+.calculator-container {
+  width: 100%;
+  max-width: 360px;
+}
+
+.calculator {
+  background-color: var(--bg-calculator);
+  border: 1px solid var(--border-color);
+  border-radius: var(--calc-radius);
+  padding: 24px;
+  box-shadow: 
+    0 24px 48px -12px rgba(0, 0, 0, 0.6),
+    0 8px 16px -8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.display {
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  word-break: break-all;
+  padding: 12px 8px 20px 8px;
+}
+
+.previous-operand {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  min-height: 1.5rem;
+}
+
+.current-operand {
+  color: var(--text-main);
+  font-size: 2.85rem;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+/* CSS-GRID BUTTON LAYOUT */
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+}
+
+.btn {
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 64px;
+  border-radius: var(--btn-radius);
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.12s ease, transform 0.08s ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-number { background-color: var(--btn-num-bg); }
+.btn-number:hover { background-color: var(--btn-num-hover); }
+
+.btn-function { background-color: var(--btn-func-bg); font-size: 1.25rem; font-weight: 600; }
+.btn-function:hover { background-color: var(--btn-func-hover); }
+
+.btn-operator { background-color: var(--btn-op-bg); font-size: 1.65rem; }
+.btn-operator:hover { background-color: var(--btn-op-hover); }
+
+/* iOS Active Operator Highlight */
+.btn-operator.is-active {
+  background-color: #ffffff;
+  color: var(--btn-op-bg);
+}
+
+.btn-zero {
+  grid-column: span 2;
+  justify-content: flex-start;
+  padding-left: 26px;
+}
+

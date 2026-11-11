@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern iOS-Style Calculator</title>
+
+  <!-- Link external CSS stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Load JavaScript after HTML parsing -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Main Calculator Card -->
+  <main class="calculator-container">
+    <div class="calculator" role="region" aria-label="Calculator">
+
+      <!-- ================= DISPLAY SCREEN ================= -->
+      <section class="display" aria-live="polite">
+        <div class="previous-operand" data-previous-operand></div>
+        <div class="current-operand" data-current-operand>0</div>
+      </section>
+
+      <!-- ================= BUTTONS (CSS GRID) ================= -->
+      <section class="buttons-grid">
+        <!-- Row 1 -->
+        <button type="button" class="btn btn-function" data-action="all-clear">AC</button>
+        <button type="button" class="btn btn-function" data-action="delete">DEL</button>
+        <button type="button" class="btn btn-function" data-action="percent">%</button>
+        <button type="button" class="btn btn-operator" data-operation="÷">÷</button>
+
+        <!-- Row 2 -->
+        <button type="button" class="btn btn-number" data-number="7">7</button>
+        <button type="button" class="btn btn-number" data-number="8">8</button>
+        <button type="button" class="btn btn-number" data-number="9">9</button>
+        <button type="button" class="btn btn-operator" data-operation="×">×</button>
+
+        <!-- Row 3 -->
+        <button type="button" class="btn btn-number" data-number="4">4</button>
+        <button type="button" class="btn btn-number" data-number="5">5</button>
+        <button type="button" class="btn btn-number" data-number="6">6</button>
+        <button type="button" class="btn btn-operator" data-operation="−">−</button>
+
+        <!-- Row 4 -->
+        <button type="button" class="btn btn-number" data-number="1">1</button>
+        <button type="button" class="btn btn-number" data-number="2">2</button>
+        <button type="button" class="btn btn-number" data-number="3">3</button>
+        <button type="button" class="btn btn-operator" data-operation="+">+</button>
+
+        <!-- Row 5 -->
+        <button type="button" class="btn btn-number btn-zero" data-number="0">0</button>
+        <button type="button" class="btn btn-number" data-number=".">.</button>
+        <button type="button" class="btn btn-operator btn-equals" data-action="equals">=</button>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>
+
